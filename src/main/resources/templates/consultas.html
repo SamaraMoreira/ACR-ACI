@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultas</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container-consultas">
+    <header class="cabecalho">
+        <div class="titulo">
+            <img th:src="@{/img/consultas-title.png}" alt="imagem ilustrativa de consultas" width="40" height="40">
+            <h1>Consultas</h1>
+        </div>
+        <a href="/">
+            <img th:src="@{/img/arrow.png}" alt="imagem de uma seta" width="20" height="20">
+        </a>
+    </header>
+    <div th:each="consulta : ${consultas}" class="consultas">
+        <h3 th:text="'Data e Hora: ' + ${consulta.getDataHora()}"></h3>
+        <h3 th:text="'Status: ' + ${consulta.getStatus()}"></h3>
+        <h3 th:text="'Medico: ' + ${consulta.getMedico().getNome()}"></h3>
+        <h3 th:text="'Paciente: ' + ${consulta.getPaciente().getNome()}"></h3>
+    </div>
+</div>
+</body>
+</html>

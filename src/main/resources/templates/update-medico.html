@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Médico</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <script th:src="@{/js/endereco.js}"></script>
+</head>
+<body class="body-new-medico">
+<div class="container-new">
+    <form method="POST" th:action="@{/medicos/edit}" th:object="${medicoUpdateDTO}" class="form-new-medico-paciente">
+        <h2 class="titulo">Atualizar Médico</h2>
+
+        <input type="hidden" th:field="*{id}" />
+
+        <!-- Informações Pessoais -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nome" class="label-new-medico-paciente">Nome</label>
+                <input type="text" th:field="*{nome}" name="nome" id="nome" class="input-new-medico-paciente">
+                <div class="error-message" th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="especialidade" class="label-new-medico-paciente">Especialidade</label>
+                <select id="especialidade" name="especialidade" th:field="*{especialidade}" class="input-new-medico-paciente">
+                    <option value="" disabled selected>Escolha uma especialidade</option>
+                    <option th:each="especialidade : ${especialidades}" th:value="${especialidade.getValue()}" th:text="${especialidade}"></option>
+                </select>
+                <div class="error-message" th:if="${#fields.hasErrors('especialidade')}" th:errors="*{'especialidade'}"></div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="telefone" class="label-new-medico-paciente">Telefone</label>
+                <input type="text" th:field="*{telefone}" name="telefone" id="telefone" class="input-new-medico-paciente">
+                <div class="error-message" th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}"></div>
+            </div>
+        </div>
+
+        <!-- Endereço -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="cep" class="label-new-medico-paciente">Cep</label>
+                <input type="text" th:field="*{endereco.cep}" name="cep" id="cep" class="input-new-medico-paciente">
+            </div>
+
+            <div class="form-group">
+                <label for="numero" class="label-new-medico-paciente">Número Residencial</label>
+                <input type="text" th:field="*{endereco.numero}" name="numero" id="numero" class="input-new-medico-paciente">
+                <div class="error-message" th:if="${#fields.hasErrors('endereco.numero')}" th:errors="*{endereco.numero}"></div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="rua" class="label-new-medico-paciente">Rua</label>
+                <input type="text" th:field="*{endereco.rua}" name="rua" id="rua" class="input-new-medico-paciente" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="bairro" class="label-new-medico-paciente">Bairro</label>
+                <input type="text" th:field="*{endereco.bairro}" name="bairro" id="bairro" class="input-new-medico-paciente" readonly>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="cidade" class="label-new-medico-paciente">Cidade</label>
+                <input type="text" th:field="*{endereco.cidade}" name="cidade" id="cidade" class="input-new-medico-paciente" readonly>
+            </div>
+
+            <div class="form-group">
+                <label for="estado" class="label-new-medico-paciente">Estado</label>
+                <input type="text" th:field="*{endereco.estado}" name="estado" id="estado" class="input-new-medico-paciente" readonly>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="complemento" class="label-new-medico-paciente">Complemento</label>
+                <input type="text" th:field="*{endereco.complemento}" name="complemento" id="complemento" class="input-new-medico-paciente">
+            </div>
+        </div>
+
+        <button type="submit" class="blue-button button-new-medico-paciente">Salvar</button>
+    </form>
+</div>
+<script>
+    // Inicializa o handler de CEP
+    window.onload = function() {
+        inicializarCepHandler();
+    };
+</script>
+</body>
+</html>

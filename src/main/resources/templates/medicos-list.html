@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Médicos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container-medicos">
+    <header class="cabecalho">
+        <div class="titulo">
+            <img th:src="@{/img/consultas-title.png}" alt="imagem ilustrativa de médicos" width="40" height="40">
+            <h1>Médicos</h1>
+        </div>
+
+        <a class="blue-button" th:href="@{/medicos/create}">
+            <img th:src="@{/img/exame.png}" alt="imagem ilustrativa de médicos" width="20" height="20">
+            <p>Cadastrar novo Médico</p>
+        </a>
+
+        <a href="/">
+            <img th:src="@{/img/arrow.png}" alt="imagem de uma seta" width="20" height="20">
+        </a>
+    </header>
+
+    <div th:each="medico : ${medicos}" class="medicos">
+        <h3 th:text="'Nome: ' + ${medico.getNome()}"></h3>
+        <h3 th:text="'Crm: ' + ${medico.getCrm()}"></h3>
+        <h3 th:text="'Especialidade: ' + ${medico.getEspecialidade()}"></h3>
+        <h3 th:text="'Telefone: ' + ${medico.getTelefone}"></h3>
+
+        <div class="acoes-medico">
+            <div>
+                <form th:action="@{/medicos/delete/{id}(id=${medico.getId()})}" method="post" style="display:inline;">
+                    <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este médico?');" class="red-button">Excluir</button>
+                </form>
+            </div>
+
+            <div>
+                <a th:href="@{/medicos/edit/{id}(id=${medico.getId()})}" class="alternative-button">Editar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

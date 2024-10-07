@@ -1,0 +1,10 @@
+.container-index {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.body-index {
+    align-items: center;
+    height: 100vh;
+}

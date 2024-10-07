@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Página inicial</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body class="body-index">
+<div class="container-index">
+    <a class="blue-button" href="###">
+        <img th:src="@{/img/exame.png}" alt="imagem ilustrativa de exame" width="20" height="20">
+        Realizar Exame
+    </a>
+
+    <a class="blue-button" th:href="@{/consultas}">
+        <img th:src="@{/img/consultas.png}" alt="imagem ilustrativa de atendimentos" width="20" height="20">
+        <p>Consultas</p>
+    </a>
+
+    <a class="blue-button" th:href="@{/medicos}">
+        <img th:src="@{/img/exame.png}" alt="imagem ilustrativa de exames" width="20" height="20">
+        <p>Médicos</p>
+    </a>
+
+    <a class="blue-button" th:href="@{/pacientes}">
+        <img th:src="@{/img/exame.png}" alt="imagem ilustrativa de exames" width="20" height="20">
+        <p>Pacientes</p>
+    </a>
+    </a>
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+/*Component Button-Blue*/
+.blue-button {
+    display: flex;
+    gap: 10px;
+    background-color: #0891B2;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.red-button{
+    display: flex;
+    gap: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.alternative-button{
+    display: flex;
+    gap: 10px;
+    background-color: #0764B2;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.blue-button:hover {
+    background-color: #0891B3;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 2px;
+}

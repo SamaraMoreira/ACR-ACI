@@ -1,0 +1,39 @@
+.container-medicos {
+    width: 75vh;
+}
+
+.acoes-medico{
+    margin: 20px 0px 0px 0px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.medicos {
+    margin: 20px 0px 10px 0px;
+    border: 1px solid #0891B2;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.medicos h3 {
+    color: #0891B2;
+    margin: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 0.8em;
+}
