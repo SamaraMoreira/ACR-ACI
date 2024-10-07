@@ -1,6 +1,4 @@
 package com.logistcs.aihack.controllers;
-
-import com.logistcs.aihack.domain.enums.EspecialidadeMedico;
 import com.logistcs.aihack.dtos.PacienteCreateDTO;
 import com.logistcs.aihack.dtos.PacienteUpdateDTO;
 import com.logistcs.aihack.services.PacienteService;
