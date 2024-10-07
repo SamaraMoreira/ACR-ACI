@@ -126,25 +126,4 @@ CREATE TABLE tb_paciente (
     CONSTRAINT UQ_Pacientes_Endereco UNIQUE (endereco_id)
 );
 
--- Criação das constraints de chave estrangeira
-ALTER TABLE tb_consultas 
-    ADD CONSTRAINT FK_Consultas_Medico 
-    FOREIGN KEY (medico_id) 
-    REFERENCES tb_medicos (id);
-
-ALTER TABLE tb_consultas 
-    ADD CONSTRAINT FK_Consultas_Paciente 
-    FOREIGN KEY (paciente_id) 
-    REFERENCES tb_paciente (id);
-
-ALTER TABLE tb_medicos 
-    ADD CONSTRAINT FK_Medicos_Endereco 
-    FOREIGN KEY (endereco_id) 
-    REFERENCES tb_endereco (id);
-
-ALTER TABLE tb_paciente 
-    ADD CONSTRAINT FK_Pacientes_Endereco 
-    FOREIGN KEY (endereco_id) 
-    REFERENCES tb_endereco (id);
-    
     
